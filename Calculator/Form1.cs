@@ -22,9 +22,7 @@ namespace Calculator
         //- = 2
         //* = 3
         // / = 4
-
-        //Tal[0] = 4500.0;
-        int MaxAmountSymbols = 0, i = 0, k = 0;
+        int MaxAmountSymbols = 0, i = 0;
         public Form1()
         {
             InitializeComponent();
@@ -240,6 +238,8 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "+";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
                     }
                     break;
                 case 2:
@@ -252,6 +252,8 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "-";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
                     }
                     break;
                 case 3:
@@ -264,6 +266,8 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "*";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
                     }
                     break;
                 case 4:
@@ -276,6 +280,8 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "/";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
                     }
                     break;
                 default:
