@@ -7,3 +7,13 @@
 \\fs1.ad.ssis.nu\17kibr\Desktop\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
 \\fs1.ad.ssis.nu\17kibr\Desktop\Calculator\Calculator\obj\Debug\Calculator.exe
 \\fs1.ad.ssis.nu\17kibr\Desktop\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Antec\Desktop\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Antec\Desktop\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Antec\Desktop\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.pdb

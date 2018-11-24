@@ -258,6 +258,7 @@
             this.CE.TabIndex = 21;
             this.CE.Text = "CE";
             this.CE.UseVisualStyleBackColor = true;
+            this.CE.Click += new System.EventHandler(this.CE_Click);
             // 
             // C
             // 
