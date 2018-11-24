@@ -240,6 +240,7 @@ namespace Calculator
                         richTextBox1.Text = Display;
                         i--;
                         Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 case 2:
@@ -254,6 +255,7 @@ namespace Calculator
                         richTextBox1.Text = Display;
                         i--;
                         Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 case 3:
@@ -282,6 +284,7 @@ namespace Calculator
                         richTextBox1.Text = Display;
                         i--;
                         Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 default:
