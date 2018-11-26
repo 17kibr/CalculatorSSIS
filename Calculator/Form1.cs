@@ -16,8 +16,8 @@ namespace Calculator
         string Display = "";
         string HiddenDisplay = "";
         decimal[] Tal = new decimal[10];
-        float temporary;
-        int LastOperationssymbol = 0;
+        decimal temporary;
+        int LastOperationssymbol = 0, Operationssymbol = 0;
         //+ = 1
         //- = 2
         //* = 3
@@ -125,6 +125,14 @@ namespace Calculator
                     Display = Display + "+";
                     richTextBox1.Text = Display;
                 }
+                if (Operationssymbol == 0)
+                {
+                    Operationssymbol = 1;
+                }
+                else
+                {
+                    LastOperationssymbol = 1;
+                }
                 LastOperationssymbol = 1;
                 MaxAmountSymbols = 1;
                 HiddenDisplay = "";
@@ -149,7 +157,14 @@ namespace Calculator
             {
                 Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "-";
-                LastOperationssymbol = 2;
+                if (Operationssymbol == 0)
+                {
+                    Operationssymbol = 2;
+                }
+                else
+                {
+                    LastOperationssymbol = 2;
+                }
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
                 HiddenDisplay = "";
@@ -164,7 +179,14 @@ namespace Calculator
             {
                 Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "*";
-                LastOperationssymbol = 3;
+                if (Operationssymbol == 0)
+                {
+                    Operationssymbol = 3;
+                }
+                else
+                {
+                    LastOperationssymbol = 3;
+                }
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
                 HiddenDisplay = "";
@@ -179,7 +201,14 @@ namespace Calculator
             {
                 Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "/";
-                LastOperationssymbol = 4;
+                if (Operationssymbol == 0)
+                {
+                    Operationssymbol = 4;
+                }
+                else
+                {
+                    LastOperationssymbol = 4;
+                }
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
                 HiddenDisplay = "";
@@ -226,61 +255,102 @@ namespace Calculator
 
         private void StepCalculation()
         {
-            switch (LastOperationssymbol)
+            switch (Operationssymbol)
             {
                 case 1:
                     //plus
                     if (i >= 1)
                     {
-                        temporary = Tal[i - 1] + Tal[i];
-                        Display = Convert.ToString(temporary);
-                        richTextBox1.Text = Convert.ToString(temporary);
-                        Display = Display + "+";
-                        richTextBox1.Text = Display;
-                        i--;
-                        Tal[0] = temporary;
-                        temporary = 0;
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            if (Operationssymbol == LastOperationssymbol)
+                            {
+                                temporary = Tal[i - 1] + Tal[i];
+                                Display = Convert.ToString(temporary);
+                                richTextBox1.Text = Convert.ToString(temporary);
+                                Display = Display + "+";
+                                richTextBox1.Text = Display;
+                                i--;
+                                Tal[0] = temporary;
+                                temporary = 0;
+                            }
+                            else
+                            {
+                                SwitchCalculation();
+                            }
+                        }
                     }
                     break;
                 case 2:
                     //minus
                     if (i >= 1)
                     {
-                        temporary = Tal[i - 1] - Tal[i];
-                        Display = Convert.ToString(temporary);
-                        richTextBox1.Text = Convert.ToString(temporary);
-                        Display = Display + "-";
-                        richTextBox1.Text = Display;
-                        i--;
-                        Tal[0] = temporary;
-                        temporary = 0;
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            if (Operationssymbol == LastOperationssymbol)
+                            {
+                                temporary = Tal[i - 1] - Tal[i];
+                                Display = Convert.ToString(temporary);
+                                richTextBox1.Text = Convert.ToString(temporary);
+                                Display = Display + "-";
+                                richTextBox1.Text = Display;
+                                i--;
+                                Tal[0] = temporary;
+                                temporary = 0;
+                            }
+                            else
+                            {
+                                SwitchCalculation();
+                            }
+                        }
                     }
                     break;
                 case 3:
                     //Gånger
                     if (i >= 1)
                     {
-                        temporary = Tal[i - 1] * Tal[i];
-                        Display = Convert.ToString(temporary);
-                        richTextBox1.Text = Convert.ToString(temporary);
-                        Display = Display + "*";
-                        richTextBox1.Text = Display;
-                        i--;
-                        Tal[0] = temporary;
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            if (Operationssymbol == LastOperationssymbol)
+                            {
+                                temporary = Tal[i - 1] * Tal[i];
+                                Display = Convert.ToString(temporary);
+                                richTextBox1.Text = Convert.ToString(temporary);
+                                Display = Display + "*";
+                                richTextBox1.Text = Display;
+                                i--;
+                                Tal[0] = temporary;
+                                temporary = 0;
+                            }
+                            else
+                            {
+                                SwitchCalculation();
+                            }
+                        }
                     }
                     break;
                 case 4:
                     //Dividerad
                     if (i >= 1)
                     {
-                        temporary = Tal[i - 1] / Tal[i];
-                        Display = Convert.ToString(temporary);
-                        richTextBox1.Text = Convert.ToString(temporary);
-                        Display = Display + "/";
-                        richTextBox1.Text = Display;
-                        i--;
-                        Tal[0] = temporary;
-                        temporary = 0;
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            if (Operationssymbol == LastOperationssymbol)
+                            {
+                                temporary = Tal[i - 1] / Tal[i];
+                                Display = Convert.ToString(temporary);
+                                richTextBox1.Text = Convert.ToString(temporary);
+                                Display = Display + "/";
+                                richTextBox1.Text = Display;
+                                i--;
+                                Tal[0] = temporary;
+                                temporary = 0;
+                            }
+                            else
+                            {
+                                SwitchCalculation();
+                            }
+                        }
                     }
                     break;
                 default:
@@ -289,5 +359,77 @@ namespace Calculator
                     break;
             }
         } 
+        private void SwitchCalculation()
+        {
+            switch (LastOperationssymbol)
+            {
+                case 1:
+                    //plus
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            if (Operationssymbol == LastOperationssymbol)
+                            {
+                                temporary = Tal[i - 1] + Tal[i];
+                                Display = Convert.ToString(temporary);
+                                richTextBox1.Text = Convert.ToString(temporary);
+                                Display = Display + "+";
+                                richTextBox1.Text = Display;
+                                i--;
+                                Tal[0] = temporary;
+                                temporary = 0;
+                            }
+                            else
+                            {
+                                SwitchCalculation();
+                            }
+                        }
+                    break;
+                case 2:
+                    //minus
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            temporary = Tal[i - 1] - Tal[i];
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            Display = Display + "-";
+                            richTextBox1.Text = Display;
+                            i--;
+                            Tal[0] = temporary;
+                            temporary = 0;
+                        }
+                    break;
+                case 3:
+                    //Gånger
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            temporary = Tal[i - 1] * Tal[i];
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            Display = Display + "*";
+                            richTextBox1.Text = Display;
+                            i--;
+                            Tal[0] = temporary;
+                        }
+                    break;
+                case 4:
+                    //Dividerad
+                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
+                        {
+                            temporary = Tal[i - 1] / Tal[i];
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            Display = Display + "/";
+                            richTextBox1.Text = Display;
+                            i--;
+                            Tal[0] = temporary;
+                            temporary = 0;
+                        }
+                    break;
+                default:
+                    //annat, borde alldrig förekomma
+                    Console.WriteLine("None match.");
+                    break;
+            }
+        }
     }
 }
