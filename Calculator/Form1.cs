@@ -15,8 +15,8 @@ namespace Calculator
     {
         string Display = "";
         string HiddenDisplay = "";
-        float[] Tal = new float[10];
-        float temporary;
+        decimal[] Tal = new decimal[2];
+        decimal temporary;
         int LastOperationssymbol = 0;
         //+ = 1
         //- = 2
@@ -121,7 +121,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = float.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 if (i == 0)
                 {
                     Display = Display + "+";
@@ -140,6 +140,7 @@ namespace Calculator
             if (MaxAmountSymbols == 0)
             {
                 Display = Display + ",";
+                HiddenDisplay = HiddenDisplay + ",";
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
             }
@@ -149,7 +150,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = float.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "-";
                 LastOperationssymbol = 2;
                 richTextBox1.Text = Display;
@@ -164,7 +165,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                    Tal[i] = float.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "*";
                 LastOperationssymbol = 3;
                 richTextBox1.Text = Display;
@@ -179,7 +180,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = float.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "/";
                 LastOperationssymbol = 4;
                 richTextBox1.Text = Display;
@@ -194,7 +195,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = float.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
                 Display = Display + "%";
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
@@ -235,7 +236,6 @@ namespace Calculator
                     if (i >= 1)
                     {
                         temporary = Tal[i - 1] + Tal[i];
-                        Math.Round(temporary, 2);
                         Display = Convert.ToString(temporary);
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "+";
@@ -247,7 +247,6 @@ namespace Calculator
                     if (i >= 1)
                     {
                         temporary = Tal[i - 1] - Tal[i];
-                        Math.Round(temporary, 2);
                         Display = Convert.ToString(temporary);
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "-";
@@ -259,7 +258,6 @@ namespace Calculator
                     if (i >= 1)
                     {
                         temporary = Tal[i - 1] * Tal[i];
-                        Math.Round(temporary, 2);
                         Display = Convert.ToString(temporary);
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "*";
@@ -271,7 +269,6 @@ namespace Calculator
                     if (i >= 1)
                     {
                         temporary = Tal[i - 1] / Tal[i];
-                        Math.Round(temporary, 2);
                         Display = Convert.ToString(temporary);
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "/";

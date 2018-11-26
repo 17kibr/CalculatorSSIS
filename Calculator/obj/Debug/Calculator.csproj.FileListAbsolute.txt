@@ -17,3 +17,13 @@ C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.csproj.Generat
 C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\Antec\Desktop\Calculator\Calculator\obj\Debug\Calculator.pdb
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\bin\Debug\Calculator.exe.config
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.exe
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.pdb
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\bin\Debug\Calculator.exe
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\bin\Debug\Calculator.pdb
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.Form1.resources
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+\\fs1.ad.ssis.nu\17kibr\Desktop\CalculatorSSIS\CalculatorSSIS\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
