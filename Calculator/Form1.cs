@@ -365,66 +365,183 @@ namespace Calculator
             {
                 case 1:
                     //plus
-                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
-                        {
-                            if (Operationssymbol == LastOperationssymbol)
-                            {
-                                temporary = Tal[i - 1] + Tal[i];
-                                Display = Convert.ToString(temporary);
-                                richTextBox1.Text = Convert.ToString(temporary);
-                                Display = Display + "+";
-                                richTextBox1.Text = Display;
-                                i--;
-                                Tal[0] = temporary;
-                                temporary = 0;
-                            }
-                            else
-                            {
-                                SwitchCalculation();
-                            }
-                        }
+                    switch (Operationssymbol)
+                    {
+                        case 1:
+                            //ingenting borde hända
+                            break;
+                        case 2:
+                            temporary = Tal[i - 1] + Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 3:
+                            temporary = Tal[i - 1] + Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "*";
+                            Operationssymbol = 3;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 4:
+                            temporary = Tal[i - 1] + Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "/";
+                            Operationssymbol = 4;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                    }
                     break;
                 case 2:
                     //minus
-                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
-                        {
+                    switch (Operationssymbol)
+                    {
+                        case 1:
                             temporary = Tal[i - 1] - Tal[i];
+                            Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
                             Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
+                            break;
+                        case 2:
+                            //ingenting borde hända
+                            break;
+                        case 3:
+                            temporary = Tal[i - 1] - Tal[i];
                             Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                        }
+                            Display = Display + "*";
+                            Operationssymbol = 3;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 4:
+                            temporary = Tal[i - 1] - Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "/";
+                            Operationssymbol = 4;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                    }
                     break;
                 case 3:
                     //Gånger
-                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
-                        {
+                    switch (Operationssymbol)
+                    {
+                        case 1:
                             temporary = Tal[i - 1] * Tal[i];
+                            Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
-                            Display = Display + "*";
+                            temporary = 0;
+                            Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
+                            break;
+                        case 2:
+                            temporary = Tal[i - 1] * Tal[i];
                             Tal[0] = temporary;
-                        }
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 3:
+                            //ingenting borde hända
+                            break;
+                        case 4:
+                            temporary = Tal[i - 1] * Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "/";
+                            Operationssymbol = 4;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                    }
                     break;
                 case 4:
                     //Dividerad
-                        if (Operationssymbol == LastOperationssymbol || LastOperationssymbol == 0)
-                        {
+                    switch (Operationssymbol)
+                    {
+                        case 1:
                             temporary = Tal[i - 1] / Tal[i];
+                            Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
-                            Display = Display + "/";
+                            temporary = 0;
+                            Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
+                            break;
+                        case 2:
+                            temporary = Tal[i - 1] / Tal[i];
                             Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                        }
-
+                            Display = Display + "-";
+                            Operationssymbol = 2;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 3:
+                            temporary = Tal[i - 1] / Tal[i];
+                            Tal[0] = temporary;
+                            Display = Convert.ToString(temporary);
+                            richTextBox1.Text = Convert.ToString(temporary);
+                            temporary = 0;
+                            Display = Display + "*";
+                            Operationssymbol = 3;
+                            LastOperationssymbol = 0;
+                            richTextBox1.Text = Display;
+                            i--;
+                            break;
+                        case 4:
+                            //ingenting borde hända
+                            break;
+                    }
                     break;
                 default:
                     //annat, borde alldrig förekomma
