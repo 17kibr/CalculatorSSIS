@@ -424,6 +424,7 @@ namespace Calculator
                             Tal[0] = temporary;
                             temporary = 0;
                         }
+
                     break;
                 default:
                     //annat, borde alldrig förekomma
