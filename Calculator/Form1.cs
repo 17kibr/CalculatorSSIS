@@ -15,16 +15,14 @@ namespace Calculator
     {
         string Display = "";
         string HiddenDisplay = "";
-        decimal[] Tal = new decimal[2];
-        decimal temporary;
+        decimal[] Tal = new decimal[10];
+        float temporary;
         int LastOperationssymbol = 0;
         //+ = 1
         //- = 2
         //* = 3
         // / = 4
-
-        //Tal[0] = 4500.0;
-        int MaxAmountSymbols = 0, i = 0, k = 0;
+        int MaxAmountSymbols = 0, i = 0;
         public Form1()
         {
             InitializeComponent();
@@ -121,7 +119,7 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
                 if (i == 0)
                 {
                     Display = Display + "+";
@@ -140,7 +138,6 @@ namespace Calculator
             if (MaxAmountSymbols == 0)
             {
                 Display = Display + ",";
-                HiddenDisplay = HiddenDisplay + ",";
                 richTextBox1.Text = Display;
                 MaxAmountSymbols = 1;
             }
@@ -240,6 +237,9 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "+";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 case 2:
@@ -251,6 +251,9 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "-";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 case 3:
@@ -262,6 +265,8 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "*";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
                     }
                     break;
                 case 4:
@@ -273,6 +278,9 @@ namespace Calculator
                         richTextBox1.Text = Convert.ToString(temporary);
                         Display = Display + "/";
                         richTextBox1.Text = Display;
+                        i--;
+                        Tal[0] = temporary;
+                        temporary = 0;
                     }
                     break;
                 default:
