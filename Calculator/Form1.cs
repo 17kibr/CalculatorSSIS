@@ -380,7 +380,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 3:
                             temporary = Tal[i - 1] + Tal[i];
@@ -392,7 +395,10 @@ namespace Calculator
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 4:
                             temporary = Tal[i - 1] + Tal[i];
@@ -404,7 +410,10 @@ namespace Calculator
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                     }
                     break;
@@ -422,7 +431,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 2:
                             //ingenting borde hända
@@ -437,7 +449,10 @@ namespace Calculator
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 4:
                             temporary = Tal[i - 1] - Tal[i];
@@ -449,7 +464,10 @@ namespace Calculator
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                     }
                     break;
@@ -467,7 +485,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 2:
                             temporary = Tal[i - 1] * Tal[i];
@@ -479,7 +500,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 3:
                             //ingenting borde hända
@@ -494,7 +518,10 @@ namespace Calculator
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                     }
                     break;
@@ -512,7 +539,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 2:
                             temporary = Tal[i - 1] / Tal[i];
@@ -524,7 +554,10 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 3:
                             temporary = Tal[i - 1] / Tal[i];
@@ -536,7 +569,10 @@ namespace Calculator
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            i--;
+                            if (i != 1)
+                            {
+                                i = 1;
+                            }
                             break;
                         case 4:
                             //ingenting borde hända
