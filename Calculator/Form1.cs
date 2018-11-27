@@ -434,7 +434,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "-";
-                            Operationssymbol = 3;
+                            Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -446,7 +446,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "-";
-                            Operationssymbol = 4;
+                            Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -464,7 +464,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "*";
-                            Operationssymbol = 2;
+                            Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -476,7 +476,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "*";
-                            Operationssymbol = 2;
+                            Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -491,7 +491,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "*";
-                            Operationssymbol = 4;
+                            Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -509,7 +509,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "/";
-                            Operationssymbol = 2;
+                            Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -521,7 +521,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "/";
-                            Operationssymbol = 2;
+                            Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
@@ -533,7 +533,7 @@ namespace Calculator
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
                             Display = Display + "/";
-                            Operationssymbol = 3;
+                            Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
                             i--;
