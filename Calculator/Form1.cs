@@ -274,10 +274,10 @@ namespace Calculator
                                 Tal[0] = temporary;
                                 temporary = 0;
                             }
-                            else
-                            {
-                                SwitchCalculation();
-                            }
+                        }
+                        else
+                        {
+                            SwitchCalculation();
                         }
                     }
                     break;
@@ -298,10 +298,10 @@ namespace Calculator
                                 Tal[0] = temporary;
                                 temporary = 0;
                             }
-                            else
-                            {
-                                SwitchCalculation();
-                            }
+                        }
+                        else
+                        {
+                            SwitchCalculation();
                         }
                     }
                     break;
@@ -322,10 +322,10 @@ namespace Calculator
                                 Tal[0] = temporary;
                                 temporary = 0;
                             }
-                            else
-                            {
-                                SwitchCalculation();
-                            }
+                        }
+                        else
+                        {
+                            SwitchCalculation();
                         }
                     }
                     break;
@@ -346,10 +346,10 @@ namespace Calculator
                                 Tal[0] = temporary;
                                 temporary = 0;
                             }
-                            else
-                            {
-                                SwitchCalculation();
-                            }
+                        }
+                        else
+                        {
+                            SwitchCalculation();
                         }
                     }
                     break;
@@ -371,49 +371,40 @@ namespace Calculator
                             //ingenting borde hända
                             break;
                         case 2:
-                            temporary = Tal[i - 1] + Tal[i];
+                            temporary = Tal[i - 1] - Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "-";
+                            Display = Display + "+";
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 3:
-                            temporary = Tal[i - 1] + Tal[i];
+                            temporary = Tal[i - 1] * Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "*";
+                            Display = Display + "+";
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 4:
-                            temporary = Tal[i - 1] + Tal[i];
+                            temporary = Tal[i - 1] / Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "/";
+                            Display = Display + "+";
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                     }
                     break;
@@ -422,7 +413,7 @@ namespace Calculator
                     switch (Operationssymbol)
                     {
                         case 1:
-                            temporary = Tal[i - 1] - Tal[i];
+                            temporary = Tal[i - 1] + Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
@@ -431,43 +422,34 @@ namespace Calculator
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 2:
                             //ingenting borde hända
                             break;
                         case 3:
-                            temporary = Tal[i - 1] - Tal[i];
+                            temporary = Tal[i - 1] * Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "*";
+                            Display = Display + "-";
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 4:
-                            temporary = Tal[i - 1] - Tal[i];
+                            temporary = Tal[i - 1] / Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "/";
+                            Display = Display + "-";
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                     }
                     break;
@@ -476,52 +458,43 @@ namespace Calculator
                     switch (Operationssymbol)
                     {
                         case 1:
-                            temporary = Tal[i - 1] * Tal[i];
+                            temporary = Tal[i - 1] + Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "-";
+                            Display = Display + "*";
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 2:
-                            temporary = Tal[i - 1] * Tal[i];
+                            temporary = Tal[i - 1] - Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "-";
+                            Display = Display + "*";
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 3:
                             //ingenting borde hända
                             break;
                         case 4:
-                            temporary = Tal[i - 1] * Tal[i];
+                            temporary = Tal[i - 1] / Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "/";
+                            Display = Display + "*";
                             Operationssymbol = 4;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                     }
                     break;
@@ -530,49 +503,40 @@ namespace Calculator
                     switch (Operationssymbol)
                     {
                         case 1:
-                            temporary = Tal[i - 1] / Tal[i];
+                            temporary = Tal[i - 1] + Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "-";
+                            Display = Display + "/";
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 2:
-                            temporary = Tal[i - 1] / Tal[i];
+                            temporary = Tal[i - 1] - Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "-";
+                            Display = Display + "/";
                             Operationssymbol = 2;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 3:
-                            temporary = Tal[i - 1] / Tal[i];
+                            temporary = Tal[i - 1] * Tal[i];
                             Tal[0] = temporary;
                             Display = Convert.ToString(temporary);
                             richTextBox1.Text = Convert.ToString(temporary);
                             temporary = 0;
-                            Display = Display + "*";
+                            Display = Display + "/";
                             Operationssymbol = 3;
                             LastOperationssymbol = 0;
                             richTextBox1.Text = Display;
-                            if (i != 1)
-                            {
-                                i = 1;
-                            }
+                            i--;
                             break;
                         case 4:
                             //ingenting borde hända
