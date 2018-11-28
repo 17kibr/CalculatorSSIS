@@ -18,6 +18,7 @@ namespace Calculator
         decimal[] Tal = new decimal[10];
         decimal temporary;
         int LastOperationssymbol = 0, Operationssymbol = 0;
+        bool TillbaksPressed = false;
         //+ = 1
         //- = 2
         //* = 3
@@ -41,6 +42,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "0";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "1";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "2";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -65,6 +69,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "3";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -73,6 +78,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "4";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -81,6 +87,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "5";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -89,6 +96,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "6";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -97,6 +105,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "7";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -105,6 +114,7 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "8";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -113,13 +123,17 @@ namespace Calculator
             HiddenDisplay = HiddenDisplay + "9";
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
+            TillbaksPressed = false;
         }
 
         private void Plus_Click(object sender, EventArgs e)
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
+                if (TillbaksPressed == false)
+                {
+                    Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
+                }
                 if (i == 0)
                 {
                     Display = Display + "+";
@@ -155,7 +169,10 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                if (TillbaksPressed == false)
+                {
+                    Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
+                }
                 Display = Display + "-";
                 if (Operationssymbol == 0)
                 {
@@ -177,7 +194,10 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                if (TillbaksPressed == false)
+                {
+                    Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
+                }
                 Display = Display + "*";
                 if (Operationssymbol == 0)
                 {
@@ -199,7 +219,10 @@ namespace Calculator
         {
             if (MaxAmountSymbols == 0)
             {
-                Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture.NumberFormat);
+                if (TillbaksPressed == false)
+                {
+                    Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
+                }
                 Display = Display + "/";
                 if (Operationssymbol == 0)
                 {
@@ -234,7 +257,7 @@ namespace Calculator
         {
             if (Display.Length > 0)
             {
-
+                TillbaksPressed = true;
                 Display = Display.Remove(Display.Length - 1, 1);
                 richTextBox1.Text = Display;
                 if (MaxAmountSymbols == 1)
