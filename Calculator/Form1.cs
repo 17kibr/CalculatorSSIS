@@ -269,6 +269,10 @@ namespace Calculator
                     MaxAmountSymbols = 1;
                 }
             }
+            if (HiddenDisplay.Length > 0)
+            {
+                HiddenDisplay = HiddenDisplay.Remove(Display.Length - 1, 1);
+            }
         }
 
         private void CE_Click(object sender, EventArgs e)
