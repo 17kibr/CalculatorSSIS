@@ -216,6 +216,7 @@
             this.LikaMed.TabIndex = 17;
             this.LikaMed.Text = "=";
             this.LikaMed.UseVisualStyleBackColor = true;
+            this.LikaMed.Click += new System.EventHandler(this.LikaMed_Click);
             // 
             // Enavx
             // 

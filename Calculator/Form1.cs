@@ -150,7 +150,10 @@ namespace Calculator
                 LastOperationssymbol = 1;
                 MaxAmountSymbols = 1;
                 HiddenDisplay = "";
-                StepCalculation();
+                if (Tal[0] > 0 && Tal[1] > 0)
+                {
+                    StepCalculation();
+                }
                 i++;
             }
         }
@@ -256,28 +259,88 @@ namespace Calculator
         private void Tillbaks_Click(object sender, EventArgs e)
         {
             if (Display.Length > 0)
-            {
+            {   
+
                 TillbaksPressed = true;
                 Display = Display.Remove(Display.Length - 1, 1);
                 richTextBox1.Text = Display;
                 if (MaxAmountSymbols == 1)
                 {
                     MaxAmountSymbols = 0;
+                    Tal[1] = 0;
+                    if (i == 1)
+                    {
+                        i--;
+                    }
                 }
                 else
                 {
                     MaxAmountSymbols = 1;
                 }
-            }
-            if (HiddenDisplay.Length > 0)
-            {
-                HiddenDisplay = HiddenDisplay.Remove(Display.Length - 1, 1);
+                if (HiddenDisplay.Length > 0 && MaxAmountSymbols == 0)
+                {
+                    HiddenDisplay = HiddenDisplay.Remove(Display.Length - 1, 1);
+                }
             }
         }
 
         private void CE_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LikaMed_Click(object sender, EventArgs e)
+        {
+            if (Tal[0] != 0 && Tal[1] != 0)
+            {
+                switch (Operationssymbol)
+                {
+                    case 1:
+                        temporary = Tal[0] + Tal[1];
+                        richTextBox1.Text = Convert.ToString(temporary);
+                        HiddenDisplay = "";
+                        Display = "";
+                        Operationssymbol = 0;
+                        LastOperationssymbol = 0;
+                        TillbaksPressed = false;
+                        Tal[0] = 0;
+                        Tal[1] = 0;
+                        break;
+                    case 2:
+                        temporary = Tal[0] - Tal[1];
+                        richTextBox1.Text = Convert.ToString(temporary);
+                        HiddenDisplay = "";
+                        Display = "";
+                        Operationssymbol = 0;
+                        LastOperationssymbol = 0;
+                        TillbaksPressed = false;
+                        Tal[0] = 0;
+                        Tal[1] = 0;
+                        break;
+                    case 3:
+                        temporary = Tal[0] * Tal[1];
+                        richTextBox1.Text = Convert.ToString(temporary);
+                        HiddenDisplay = "";
+                        Display = "";
+                        Operationssymbol = 0;
+                        LastOperationssymbol = 0;
+                        TillbaksPressed = false;
+                        Tal[0] = 0;
+                        Tal[1] = 0;
+                        break;
+                    case 4:
+                        temporary = Tal[0] / Tal[1];
+                        richTextBox1.Text = Convert.ToString(temporary);
+                        HiddenDisplay = "";
+                        Display = "";
+                        Operationssymbol = 0;
+                        LastOperationssymbol = 0;
+                        TillbaksPressed = false;
+                        Tal[0] = 0;
+                        Tal[1] = 0;
+                        break;
+                }
+            }
         }
 
         private void StepCalculation()
