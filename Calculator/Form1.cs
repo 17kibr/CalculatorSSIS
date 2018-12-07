@@ -416,6 +416,19 @@ namespace Calculator
             Tal[1] = 0;
         }
 
+        private void PlusMinus_Click(object sender, EventArgs e)
+        {
+            if (Tal[1] != 0)
+            {
+                Tal[1] = Tal[1] * -1;
+                
+            }
+            else
+            {
+                Tal[0] = Tal[0] * -1;
+            }
+        }
+
         private void StepCalculation()
         {
             switch (Operationssymbol)

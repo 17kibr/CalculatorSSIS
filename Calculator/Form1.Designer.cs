@@ -282,6 +282,7 @@
             this.PlusMinus.TabIndex = 23;
             this.PlusMinus.Text = "±";
             this.PlusMinus.UseVisualStyleBackColor = true;
+            this.PlusMinus.Click += new System.EventHandler(this.PlusMinus_Click);
             // 
             // Rot
             // 
