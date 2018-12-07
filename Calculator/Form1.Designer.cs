@@ -271,6 +271,7 @@
             this.C.TabIndex = 22;
             this.C.Text = "C";
             this.C.UseVisualStyleBackColor = true;
+            this.C.Click += new System.EventHandler(this.C_Click);
             // 
             // PlusMinus
             // 

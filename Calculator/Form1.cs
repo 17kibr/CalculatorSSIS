@@ -20,6 +20,7 @@ namespace Calculator
         decimal temporary;
         int LastOperationssymbol = 0, Operationssymbol = 0;
         bool TillbaksPressed = false;
+        int numbersbeforecharcater = 0;
         //+ = 1
         //- = 2
         //* = 3
@@ -47,6 +48,7 @@ namespace Calculator
             richTextBox1.Text = Display;
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
+            numbersbeforecharcater++;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "1";
+            numbersbeforecharcater++;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,6 +70,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "2";
+            numbersbeforecharcater++;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -77,6 +81,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "3";
+            numbersbeforecharcater++;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -87,6 +92,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "4";
+            numbersbeforecharcater++;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -97,6 +103,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "5";
+            numbersbeforecharcater++;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -107,6 +114,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "6";
+            numbersbeforecharcater++;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -117,6 +125,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "7";
+            numbersbeforecharcater++;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -127,6 +136,7 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "8";
+            numbersbeforecharcater++;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -137,12 +147,14 @@ namespace Calculator
             MaxAmountSymbols = 0;
             TillbaksPressed = false;
             LabelDisplay = LabelDisplay + "9";
+            numbersbeforecharcater++;
         }
 
         private void Plus_Click(object sender, EventArgs e)
         {
             if (MaxAmountSymbols == 0)
             {
+                numbersbeforecharcater = 0;
                 if (TillbaksPressed == false)
                 {
                     Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
@@ -178,6 +190,7 @@ namespace Calculator
 
         private void Minus_Click(object sender, EventArgs e)
         {
+            numbersbeforecharcater = 0;
             if (MaxAmountSymbols == 0)
             {
                 if (TillbaksPressed == false)
@@ -204,6 +217,7 @@ namespace Calculator
 
         private void Gånger_Click(object sender, EventArgs e)
         {
+            numbersbeforecharcater = 0;
             if (MaxAmountSymbols == 0)
             {
                 if (TillbaksPressed == false)
@@ -230,6 +244,7 @@ namespace Calculator
 
         private void Dividerad_Click(object sender, EventArgs e)
         {
+            numbersbeforecharcater = 0;
             if (MaxAmountSymbols == 0)
             {
                 if (TillbaksPressed == false)
@@ -297,7 +312,13 @@ namespace Calculator
 
         private void CE_Click(object sender, EventArgs e)
         {
-
+            if (Tal[1] != 0)
+            {
+                Tal[1] = 0;
+            }
+            Display = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
+            HiddenDisplay = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
+            LabelDisplay = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
         }
 
         private void LikaMed_Click(object sender, EventArgs e)
@@ -376,6 +397,20 @@ namespace Calculator
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void C_Click(object sender, EventArgs e)
+        {
+            HiddenDisplay = "";
+            richTextBox1.Text = "0";
+            label1.Text = "";
+            Display = "";
+            LabelDisplay = "";
+            Operationssymbol = 0;
+            LastOperationssymbol = 0;
+            TillbaksPressed = false;
+            Tal[0] = 0;
+            Tal[1] = 0;
         }
 
         private void StepCalculation()
