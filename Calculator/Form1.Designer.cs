@@ -52,6 +52,7 @@
             this.PlusMinus = new System.Windows.Forms.Button();
             this.Rot = new System.Windows.Forms.Button();
             this.Comma = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -156,9 +157,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 63);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(236, 67);
+            this.richTextBox1.Size = new System.Drawing.Size(236, 24);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -302,11 +303,21 @@
             this.Comma.UseVisualStyleBackColor = true;
             this.Comma.Click += new System.EventHandler(this.Comma_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 290);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Comma);
             this.Controls.Add(this.Rot);
             this.Controls.Add(this.PlusMinus);
@@ -334,6 +345,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -363,6 +375,7 @@
         private System.Windows.Forms.Button PlusMinus;
         private System.Windows.Forms.Button Rot;
         private System.Windows.Forms.Button Comma;
+        private System.Windows.Forms.Label label1;
     }
 }
 
