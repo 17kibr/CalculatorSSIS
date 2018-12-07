@@ -302,15 +302,19 @@ namespace Calculator
 
         private void LikaMed_Click(object sender, EventArgs e)
         {
-            if (Tal[0] != 0 && Tal[1] != 0)
+            if (Tal[1] != 0)
             {
                 switch (Operationssymbol)
                 {
                     case 1:
                         temporary = Tal[0] + Tal[1];
-                        richTextBox1.Text = Convert.ToString(temporary);
+                        Display = Convert.ToString(temporary);
+                        richTextBox1.Text = Display;
                         HiddenDisplay = "";
+                        LabelDisplay = LabelDisplay + "=";
+                        label1.Text = LabelDisplay;
                         Display = "";
+                        LabelDisplay = "";
                         Operationssymbol = 0;
                         LastOperationssymbol = 0;
                         TillbaksPressed = false;
@@ -319,9 +323,13 @@ namespace Calculator
                         break;
                     case 2:
                         temporary = Tal[0] - Tal[1];
-                        richTextBox1.Text = Convert.ToString(temporary);
+                        Display = Convert.ToString(temporary);
+                        richTextBox1.Text = Display;
                         HiddenDisplay = "";
+                        LabelDisplay = LabelDisplay + "=";
+                        label1.Text = LabelDisplay;
                         Display = "";
+                        LabelDisplay = "";
                         Operationssymbol = 0;
                         LastOperationssymbol = 0;
                         TillbaksPressed = false;
@@ -330,9 +338,13 @@ namespace Calculator
                         break;
                     case 3:
                         temporary = Tal[0] * Tal[1];
-                        richTextBox1.Text = Convert.ToString(temporary);
+                        Display = Convert.ToString(temporary);
+                        richTextBox1.Text = Display;
                         HiddenDisplay = "";
+                        LabelDisplay = LabelDisplay + "=";
+                        label1.Text = LabelDisplay;
                         Display = "";
+                        LabelDisplay = "";
                         Operationssymbol = 0;
                         LastOperationssymbol = 0;
                         TillbaksPressed = false;
@@ -341,14 +353,21 @@ namespace Calculator
                         break;
                     case 4:
                         temporary = Tal[0] / Tal[1];
-                        richTextBox1.Text = Convert.ToString(temporary);
+                        Display = Convert.ToString(temporary);
+                        richTextBox1.Text = Display;
                         HiddenDisplay = "";
+                        LabelDisplay = LabelDisplay + "=";
+                        label1.Text = LabelDisplay;
                         Display = "";
+                        LabelDisplay = "";
                         Operationssymbol = 0;
                         LastOperationssymbol = 0;
                         TillbaksPressed = false;
                         Tal[0] = 0;
                         Tal[1] = 0;
+                        break;
+                    default:
+                        richTextBox1.Text = "ERROR";
                         break;
                 }
             }
