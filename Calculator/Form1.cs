@@ -159,7 +159,7 @@ namespace Calculator
                 {
                     Tal[i] = decimal.Parse(HiddenDisplay, CultureInfo.InvariantCulture);
                 }
-                Display = Display + "-";
+                Display = Display + "+";
                 if (Operationssymbol == 0)
                 {
                     Operationssymbol = 1;
@@ -312,13 +312,16 @@ namespace Calculator
 
         private void CE_Click(object sender, EventArgs e)
         {
-            if (Tal[1] != 0)
-            {
-                Tal[1] = 0;
-            }
-            Display = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
-            HiddenDisplay = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
-            LabelDisplay = HiddenDisplay.Remove(Display.Length - numbersbeforecharcater, 1);
+            HiddenDisplay = "";
+            richTextBox1.Text = "0";
+            label1.Text = "";
+            Display = "";
+            LabelDisplay = "";
+            Operationssymbol = 0;
+            LastOperationssymbol = 0;
+            TillbaksPressed = false;
+            Tal[0] = 0;
+            Tal[1] = 0;
         }
 
         private void LikaMed_Click(object sender, EventArgs e)
