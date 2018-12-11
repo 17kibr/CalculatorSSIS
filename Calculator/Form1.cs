@@ -25,6 +25,9 @@ namespace Calculator
         //- = 2
         //* = 3
         // / = 4
+        // % = 5
+        // ^ = 6
+        // sqrt = 7
         int MaxAmountSymbols = 0, i = 0;
         public Form1()
         {
@@ -312,16 +315,48 @@ namespace Calculator
 
         private void CE_Click(object sender, EventArgs e)
         {
+            /*
+            switch (Operationssymbol)
+            {
+                case 1:
+                    Display = Display.Remove(Display.Length - (numbersbeforecharcater + 1));
+                    richTextBox1.Text = Display;
+                    break;
+                case 2:
+                    Display = Display.Remove(-);
+                    richTextBox1.Text = Display;
+                    break;
+                case 3:
+                    Display = Display.Remove(*);
+                    richTextBox1.Text = Display;
+                    break;
+                case 4:
+                    Display = Display.Remove(/);
+                    richTextBox1.Text = Display;
+                    break;
+                default:
+                    richTextBox1.Text = "ERROR";
+                    break;
+            }
+            */
+            Display = Display.Remove(Display.Length - (numbersbeforecharcater + 1));
+            LabelDisplay = LabelDisplay.Remove(LabelDisplay.Length - (numbersbeforecharcater + 1));
+            richTextBox1.Text = Display;
+            label1.Text = LabelDisplay;
+            numbersbeforecharcater = 0;
+            if (Tal[1] != 0)
+            {
+                Tal[1] = 0;
+            }
             HiddenDisplay = "";
-            richTextBox1.Text = "0";
-            label1.Text = "";
-            Display = "";
-            LabelDisplay = "";
-            Operationssymbol = 0;
-            LastOperationssymbol = 0;
-            TillbaksPressed = false;
-            Tal[0] = 0;
-            Tal[1] = 0;
+            MaxAmountSymbols = 0;
+            TillbaksPressed = true;
+            if (i >= 1)
+            {
+                i--;
+            }
+
+
         }
 
         private void LikaMed_Click(object sender, EventArgs e)
